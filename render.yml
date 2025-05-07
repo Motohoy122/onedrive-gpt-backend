@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: onedrive-gpt-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    plan: free
+    envVars:
+      - key: CLIENT_ID
+        sync: false
+      - key: CLIENT_SECRET
+        sync: false
+      - key: TENANT_ID
+        sync: false
+      - key: REDIRECT_URI
+        sync: false
