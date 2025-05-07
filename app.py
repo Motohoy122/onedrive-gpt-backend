@@ -42,3 +42,8 @@ def list_files():
     headers = {"Authorization": f"Bearer {access_token}"}
     r = requests.get("https://graph.microsoft.com/v1.0/me/drive/root/children", headers=headers)
     return jsonify(r.json())
+
+# ✅ THIS IS THE KEY TO FIX YOUR DEPLOY
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
